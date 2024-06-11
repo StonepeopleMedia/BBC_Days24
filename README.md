@@ -579,16 +579,16 @@ Here's a script that achieves this:
 library(ggplot2)
 library(dplyr)
 
-# Assuming your dataframe is named "releases"
-# Convert reportingYear to a factor to maintain chronological order
+ Assuming your dataframe is named "releases"
+ Convert reportingYear to a factor to maintain chronological order
 releases$reportingYear <- factor(releases$reportingYear)
 
-# Calculate total emissions for each country and year
+ Calculate total emissions for each country and year
 total_emissions <- releases %>%
   group_by(reportingYear, countryName) %>%
   summarise(total_emissions = sum(emissions))
 
-# Plotting
+ Plotting
 ggplot(total_emissions, aes(x = reportingYear, y = total_emissions, color = countryName)) +
   geom_line() +
   labs(title = "Total Emissions Over Time",
@@ -600,16 +600,16 @@ ggplot(total_emissions, aes(x = reportingYear, y = total_emissions, color = coun
 library(ggplot2)
 library(dplyr)
 
-# Assuming your dataframe is named df
-# First, convert reportingYear to a factor to maintain chronological order
+ Assuming your dataframe is named df
+ First, convert reportingYear to a factor to maintain chronological order
 df$reportingYear <- factor(df$reportingYear)
 
-# Then, calculate total emissions for each country and year
+Then, calculate total emissions for each country and year
 total_emissions <- df %>%
   group_by(reportingYear, countryName) %>%
   summarise(total_emissions = sum(emissions))
 
-# Now, create the plot
+Now, create the plot
 ggplot(total_emissions, aes(x = reportingYear, y = total_emissions, color = countryName)) +
   geom_line() +
   labs(title = "Total Emissions Over Time",
@@ -623,10 +623,10 @@ I said I’d prefer a bar plot - and chatGPT came back with this
 library(ggplot2)
 library(dplyr)
 
-# Assuming your dataframe is named df
-# If not, replace df with the actual name of your dataframe
+ Assuming your dataframe is named df
+ If not, replace df with the actual name of your dataframe
 
-# Step 1: Filter the dataframe to include only the top 5 emitting countries
+ Step 1: Filter the dataframe to include only the top 5 emitting countries
 top_5_countries <- df %>%
   group_by(countryName) %>%
   summarise(total_emissions = sum(annual_emissions)) %>%
@@ -636,12 +636,12 @@ top_5_countries <- df %>%
 df_top_5 <- df %>%
   filter(countryName %in% top_5_countries)
 
-# Step 2: Group the data by country and reporting year to calculate total emissions
+ Step 2: Group the data by country and reporting year to calculate total emissions
 df_total_emissions <- df_top_5 %>%
   group_by(countryName, reportingYear) %>%
   summarise(total_emissions = sum(annual_emissions))
 
-# Step 3: Create a bar plot
+ Step 3: Create a bar plot
 ggplot(df_total_emissions, aes(x = reportingYear, y = total_emissions, fill = countryName)) +
   geom_bar(stat = "identity", position = "stack") +
   labs(title = "Total Emissions Over Time",
@@ -656,18 +656,18 @@ I forgot to specify top 5 countries for emissions, so - amended code comes back:
 library(ggplot2)
 library(dplyr)
 
-# Assuming your dataframe is named "releases"
-# Convert reportingYear to a factor to maintain chronological order
+ Assuming your dataframe is named "releases"
+ Convert reportingYear to a factor to maintain chronological order
 releases$reportingYear <- factor(releases$reportingYear)
 
-# Calculate total emissions for each country and year
+ Calculate total emissions for each country and year
 total_emissions <- releases %>%
   group_by(reportingYear, countryName) %>%
   summarise(total_emissions = sum(emissions)) %>%
   arrange(desc(total_emissions)) %>%
   filter(countryName %in% unique(head(countryName, 5)))
 
-# Plotting
+ Plotting
 ggplot(total_emissions, aes(x = reportingYear, y = total_emissions, color = countryName)) +
   geom_line() +
   labs(title = "Total Emissions Over Time for Top 5 Polluting Countries",
