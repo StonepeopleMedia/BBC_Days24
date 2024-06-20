@@ -11,7 +11,9 @@ In order to make the session easy to join without having to install a lot of sof
 
 The link to the cloud version of the project is
 
-HERE (you will need to create a posit.cloud account, but you don’t need to pay for it)
+[HERE](https://posit.cloud/spaces/189253/content/8318005) 
+
+You will need to create a posit.cloud account, but you should opt for free access - don’t need to pay for it.
 
 Installing R and RStudio
 When you get to the point where you want to run R and RStudio on your own computer, you will need to
