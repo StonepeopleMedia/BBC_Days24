@@ -1,13 +1,10 @@
-
 R Tidyverse for Journalists 2024
-AUTHORS
+AUTHOR
 Jonathan Stoneman/Luuk Sengers
 
-This version of our introduction was created to support our sessions at CIJ Summer Conference 2024.
+(This version of our introduction was originally created to support sessions at CIJ Summer Conference 2024).
 
 It is more than likely that we won’t get through the session material within the time allowed - but the material is in a logical order, and the intention is that you will be able to follow up the lessons by using the instructions in this workbook, consolidating your learning as you go.
-
-Documentation and the files used in the session are available at the github repo - https://github.com/Stonepeople/CIJ_summer_24
 
 In order to make the session easy to join without having to install a lot of software in a short time, we created a cloud version of the material needed to follow the sessions, complete with the necessary data. This project will remain active for the foreseeable future, and so you can continue to use R and the Tidyverse packages we have installed for you until you decide you want to install R and RStudio on your own hard drive.
 
@@ -608,7 +605,9 @@ ggplot(total_emissions, aes(x = reportingYear, y = total_emissions, color = coun
   labs(title = "Total Emissions Over Time for Top 5 Polluting Countries",        x = "Reporting Year",        y = "Total Emissions",        color = "Country") +
   theme_minimal() 
 
-Does this work? Not quite: so the questions are
+Does this work?
+
+Not quite: so the questions are
 
 Can you improve on the code ChatGPT supplies ?
 
@@ -662,8 +661,7 @@ First - let’s prepare ourselves by installing and loading the packages we need
 
 ##NB you only need to install these on your own computer if you don't already have them - they are included in our current cloud project
 install.packages("tidyverse") 
-install.packages("writexl") 
-install.packages("openxlsx") 
+
 install.packages("psych")
 
 ##now run them
@@ -915,4 +913,3 @@ Lynda
 Codeacademy - learn.r is part of Codeacademy’s excellent offer
 
 As you dig into graphics with ggplot a whole new world opens up. Cedric Scherer’s tutorials are superb. And don’t miss the “BBC Visual and Data Journalism cookbook for R graphics”, which includes code and a BBC-created R package for publication-quality ggplot2 graphics: https://bbc.github.io/rcookbook
-
